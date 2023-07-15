@@ -1,0 +1,64 @@
+body {
+  background: linear-gradient(180deg, #807ece 0%, #8e7ece 100%);
+  font-family: "Rubic", sans-serif;
+  font-weight: 400;
+}
+.container {
+  margin: 3vh 75vh;
+}
+.calculator {
+  width: 356px;
+  height: 566px;
+  border-radius: 48px;
+  background-color: #2d2a37;
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.22) inset,
+    0px 6px 8px 0px rgba(255, 255, 255, 0.1) inset,
+    0px 8px 17px 0px rgba(0, 0, 0, 0.29), 0px 30px 30px 0px rgba(0, 0, 0, 0.26),
+    0px 68px 41px 0px rgba(0, 0, 0, 0.15),
+    0px 120px 48px 0px rgba(0, 0, 0, 0.04),
+    0px 188px 52px 0px rgba(0, 0, 0, 0.01), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 54px 32px 32px 32px;
+}
+.example-input {
+  display: block;
+  background-color: #807ece;
+  border: none;
+  color: #6b6b6b;
+  text-align: right;
+  font-size: 20px;
+  line-height: 140%;
+  background-color: #807ece;
+  border: none;
+}
+.result-content{display: flex;
+justify-content: space-between;align-items: center;max-width: 248px;
+}
+
+.result {
+  
+  color: #ebebeb;
+  text-align: right;
+  font-size: 36px;
+  line-height: 140%; /* 50.4px */
+  max-width: 234px;
+ 
+}
+button {
+  width: 64px;
+  height: 64px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ebebeb;
+  border-radius: 50%;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    #2d2a37;
+  box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset,
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 0px 2px 4px 0px rgba(0, 0, 0, 0.26),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
+    0px 11px 7px 0px rgba(0, 0, 0, 0.01);
+  border: none;
+}
