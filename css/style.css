@@ -1,10 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
 body {
   background: linear-gradient(180deg, #807ece 0%, #8e7ece 100%);
   font-family: "Rubic", sans-serif;
   font-weight: 400;
 }
 .container {
-  margin: 3vh 75vh;
+  max-width: 356px;
+  width: 100%;
+  margin: 77px auto;
 }
 .calculator {
   width: 356px;
@@ -19,29 +30,44 @@ body {
     0px 188px 52px 0px rgba(0, 0, 0, 0.01), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 54px 32px 32px 32px;
 }
+.outputs {
+  padding-left: 18px;
+  padding-right: 22px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
+}
 .example-input {
   display: block;
-  background-color: #807ece;
+  
   border: none;
   color: #6b6b6b;
   text-align: right;
   font-size: 20px;
   line-height: 140%;
-  background-color: #807ece;
+  background-color: inherit;
   border: none;
+  margin-bottom: 8px;
 }
-.result-content{display: flex;
-justify-content: space-between;align-items: center;max-width: 248px;
+.result-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+input:focus{outline: none;}
 
 .result {
-  
   color: #ebebeb;
   text-align: right;
   font-size: 36px;
   line-height: 140%; /* 50.4px */
   max-width: 234px;
- 
+  background-color: inherit;
+  border: none;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
 }
 button {
   width: 64px;
@@ -50,15 +76,31 @@ button {
   font-size: 24px;
   color: #ebebeb;
   border-radius: 50%;
+
+  box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset,
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 0px 2px 4px 0px rgba(0, 0, 0, 0.26),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
+    0px 11px 7px 0px rgba(0, 0, 0, 0.01);
+  border: none;
+}
+svg {
+  vertical-align: middle;
+}
+.button-black {
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.05) 0%,
       rgba(255, 255, 255, 0.05) 100%
     ),
     #2d2a37;
-  box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset,
-    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 0px 2px 4px 0px rgba(0, 0, 0, 0.26),
-    0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
-    0px 11px 7px 0px rgba(0, 0, 0, 0.01);
-  border: none;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.button-violete {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0.01%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    #462878;
 }
