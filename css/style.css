@@ -39,7 +39,7 @@ body {
 }
 .example-input {
   display: block;
-  
+
   border: none;
   color: #6b6b6b;
   text-align: right;
@@ -54,7 +54,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-input:focus{outline: none;}
+input:focus {
+  outline: none;
+}
 
 .result {
   color: #ebebeb;
@@ -103,4 +105,28 @@ svg {
       rgba(255, 255, 255, 0.05) 100%
     ),
     #462878;
+}
+.button-violete:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    #7f45e2;
+  box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.1) inset,
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 0px 2px 4px 0px rgba(0, 0, 0, 0.26),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
+    0px 11px 7px 0px rgba(0, 0, 0, 0.01);
+}
+.button-black:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    #666;
+  box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.1) inset,
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 0px 2px 4px 0px rgba(0, 0, 0, 0.26),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
+    0px 11px 7px 0px rgba(0, 0, 0, 0.01);
 }
