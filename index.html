@@ -18,7 +18,7 @@
       <div class="container">
         <div class="calculator">
           <div class="outputs">
-            <input type="text" id="output" class="example-input" readonly/>
+            <input type="text" id="output" class="example-input" readonly />
             <div class="result-content">
               <div class="equals">
                 <svg
@@ -42,13 +42,13 @@
                   />
                 </svg>
               </div>
-              <input type="text" id="output2" class="result" readonly/>
+              <input type="text" id="output2" class="result" readonly />
             </div>
           </div>
           <div class="buttons">
-            <button class="button-black">CE</button>
-            <button class="button-black">C</button>
-            <button class="button-black">
+            <button class="button-black" id="complete-clean">CE</button>
+            <button class="button-black" id ='clean-last-character'>C</button>
+            <button class="button-black" id="percent">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -76,7 +76,7 @@
                 />
               </svg>
             </button>
-            <button class="button-violete" id="operation" data-action="devide">
+            <button class="button-violete" id="operation" data-action="divide">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -103,7 +103,11 @@
             <button class="button-black" id="number">7</button>
             <button class="button-black" id="number">8</button>
             <button class="button-black" id="number">9</button>
-            <button class="button-violete" id="operation" data-action="multiply">
+            <button
+              class="button-violete"
+              id="operation"
+              data-action="multiply"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -128,7 +132,11 @@
             <button class="button-black" id="number">4</button>
             <button class="button-black" id="number">5</button>
             <button class="button-black" id="number">6</button>
-            <button class="button-violete" id="operation" data-action="substraction">
+            <button
+              class="button-violete"
+              id="operation"
+              data-action="substraction"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -169,7 +177,7 @@
                 />
               </svg>
             </button>
-            <button class="button-black">
+            <button class="button-black" id="negative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -203,9 +211,9 @@
                 />
               </svg>
             </button>
-            <button class="button-black number">0</button>
-            <button class="button-black">,</button>
-            <button class="button-violete">
+            <button class="button-black" id="number">0</button>
+            <button class="button-black" id="decimal">,</button>
+            <button class="button-violete" id="equal">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -230,6 +238,7 @@
           </div>
         </div>
       </div>
-    </main><script type="module" src="js/index.js"></script>
+    </main>
+    <script src="js/calculator.js"></script>
   </body>
 </html>
