@@ -63,10 +63,18 @@ input:focus {
   text-align: right;
   font-size: 36px;
   line-height: 140%; /* 50.4px */
-  max-width: 234px;
+  width: 234px;
   background-color: inherit;
   border: none;
+  overflow: hidden;
+  white-space: nowrap;
+   text-overflow:ellipsis; 
 }
+/* .result input {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  } */
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -130,3 +138,4 @@ svg {
     0px 4px 6px 0px rgba(0, 0, 0, 0.1), 0px 7px 7px 0px rgba(0, 0, 0, 0.04),
     0px 11px 7px 0px rgba(0, 0, 0, 0.01);
 }
+

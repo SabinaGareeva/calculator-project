@@ -1,4 +1,3 @@
-// import { sum, substraction, multiply, divide } from "/.calculator.js";
 const output1 = document.querySelector("#output");
 const output2 = document.querySelector("#output2");
 const negative = document.querySelector("#negative");
@@ -8,50 +7,56 @@ const completeClean = document.querySelector("#complete-clean");
 const cleanLast = document.querySelector("#clean-last-character");
 let firstNumber = 0;
 let operation = null;
-let resetAfterOperation = false;
 let lastResult = 0; // Добавляем переменную для отслеживания последнего результата
 output2.value = firstNumber;
 
 // числа появляются в output2
+function updateInputText(inputText) {
+  output2.textContent = inputText;
+  }
 document.querySelectorAll("#number").forEach((button) => {
   button.addEventListener("click", (event) => {
     let value = event.currentTarget.textContent;
     if (output2.value === "0") {
       output2.value = value;
-      resetAfterOperation = false;
     } else {
       output2.value += value;
     }
+    
   });
 });
 
 document.querySelectorAll("#operation").forEach((button) => {
   button.addEventListener("click", (event) => {
-    if (firstNumber === 0) {
-      firstNumber = Number.parseFloat(output2.value, 10);
-      operation = event.currentTarget.dataset.action;
-      const operatorMap = {
-        sum: "+",
-        substraction: "-",
-        multiply: "*",
-        divide: "/",
-      };
-      output2.value += operatorMap[operation]; // Добавляем символ операции в строку
-      resetAfterOperation = false;
+    // if (firstNumber === 0) {
+    firstNumber = Number.parseFloat(output2.value, 10);
+    operation = event.currentTarget.dataset.action;
+    const operatorMap = {
+      sum: "+",
+      substraction: "-",
+      multiply: "*",
+      divide: "/",
+    };
+    if (output2.value.slice(-1).match(/[+\-*/]/)) {
+      alert("Знаки не должны идти друг за другом");
     } else {
-      // output1.value = ""; // Очищаем output1 перед следующей операцией
-      // firstNumber = lastResult;
-      // Сбрасываем первое число к lastResult
-      operation = event.currentTarget.dataset.action;
-      const operatorMap = {
-        sum: "+",
-        substraction: "-",
-        multiply: "*",
-        divide: "/",
-      };
-      output2.value += operatorMap[operation]; // Добавляем символ операции в строку
-      resetAfterOperation = false;
+      output2.value += operatorMap[operation];
     }
+    // Добавляем символ операции в строку
+    // }
+    // else {
+    //   // output1.value = ""; // Очищаем output1 перед следующей операцией
+    //   // firstNumber = lastResult;
+    //   // Сбрасываем первое число к lastResult
+    //   operation = event.currentTarget.dataset.action;
+    //   const operatorMap = {
+    //     sum: "+",
+    //     substraction: "-",
+    //     multiply: "*",
+    //     divide: "/",
+    //   };
+    //   output2.value += operatorMap[operation]; // Добавляем символ операции в строку
+    // }
   });
 });
 // Кнопка для добавления отрицательных чисел
@@ -70,19 +75,17 @@ percent.addEventListener("click", () => {
 });
 // Кнопка точка для ввода дробных значений
 decimal.addEventListener("click", () => {
-  const regex = /^-?\d*\.?\d*$/; // Регулярное выражение для проверки числа с точкой
-  if (regex.test(output2.value)) {
-    let curReadOut = output2.value;
-    if (curReadOut[curReadOut.length - 1] !== ".") {
-      curReadOut += ".";
-      output2.value = curReadOut;
-    } else {
-      alert("Точка уже присутствует в числе.");
-    }
+  let curReadOut = output2.value;
+  let a = curReadOut
+    .split(/([+\-*/])/)
+    .filter((element) => !element.match(/([+\-*/])/));
+  if (a[a.length - 1].includes(".")) {
+    alert("В числе нельзя поставить две точки.");
   } else {
-    alert("В вводе должно быть только целое число");
+    curReadOut += ".";
+    output2.value = curReadOut;
   }
-}); //доработать
+});
 // Полная очистка
 completeClean.addEventListener("click", () => {
   output2.value = "0";
@@ -91,7 +94,7 @@ completeClean.addEventListener("click", () => {
 // Очистка последнего значения в output2
 cleanLast.addEventListener("click", () => {
   let cleanLast = output2.value.slice(0, -1);
-   output2.value = cleanLast;
+  output2.value = cleanLast;
 });
 
 const equal = document.querySelector("#equal");
@@ -129,4 +132,3 @@ equal.addEventListener("click", () => {
   // lastResult=result;
   output2.value = result;
 });
-
